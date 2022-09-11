@@ -4,7 +4,7 @@
 
 This project contains a script which creates a markdown journal template for the current year by creating a markdown file for every day of the year and copying a markdown template into each file.
 
-A Python script named `create-files.py` creates the directories and files and copies the markdown template from `journal-template.md` into each file.
+A Python script named `create-files-for-year.py` creates directories for each month, creates markdown files for each month and copies the markdown template into each file.
 
 In the same directory as this README, the script creates a directory named `journal` with the following format:
 
@@ -40,3 +40,6 @@ Feel free to modify:
 - the current year used
 - the title formats of the month directories or markdown files
 - anything else
+
+Alternatively, you can use the `create-files-for-month.py` script to create files for a single 
+month directory.

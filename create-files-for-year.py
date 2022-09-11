@@ -3,6 +3,12 @@ import calendar
 import shutil
 from datetime import datetime
 
+'''
+1. Create a directory named 'journal'.
+2. Fill this directory with directories for each month.
+3. Fill each month directory with markdown files for each day of the month.
+'''
+
 def create_and_enter_dir(name):
     if os.path.exists(name):
         shutil.rmtree(name)
@@ -20,11 +26,12 @@ def main():
     create_and_enter_dir(f'{current_year}')
 
     for month_index, month_name in enumerate(month_names):
-        create_and_enter_dir('{} {}'.format(month_index + 1, month_name))
+        month_dir_name = f'{month_index + 1} {month_name}'
+        create_and_enter_dir(month_dir_name)
         days_in_month = calendar.monthrange(current_year, month_index + 1)[1]
 
         for day_num in range(1, days_in_month + 1):
-            file_name = '{0:02d}-{1:02d}-{2:02d}.md'.format(day_num, month_index + 1, current_year)
+            file_name = '{:02d}-{:02d}-{:02d}.md'.format(day_num, month_index + 1, current_year)
             with open(file_name, 'w') as f:
                 f.write(template_content)
         
