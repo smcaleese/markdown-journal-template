@@ -24,7 +24,7 @@ def main():
         template_content = template_file.read()
 
     for day_num in range(1, num_days + 1):
-        file_name = '{:02d}-{:02d}-{:02d}'.format(day_num, month_num, current_year)
+        file_name = '{:02d}-{:02d}-{:02d}.md'.format(day_num, month_num, current_year)
         with open(os.path.join(month_dir_name, file_name), 'w') as f:
             f.write(template_content)
 
